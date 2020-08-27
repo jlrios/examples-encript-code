@@ -1,15 +1,21 @@
-const NodeRSA = require('node-rsa');
+// Karen Villa
+// Jose Luis Rios
+
+const NodeRSA = require('node-rsa')
 const crypto = require('crypto')
 const algorithm = 'aes-256-cbc'
-const key = new NodeRSA({b: 512});
+const key = new NodeRSA({b: 512})
 
-const text = 'Implementando el algoritmo rsa!';
+// Implementacion del algoritmo de cifrado RSA.
+const text = 'Implementando el algoritmo rsa!'
 
-const encrypted = key.encrypt(text, 'base64');
-console.log('encrypted with node-rsa: ', encrypted);
-const decrypted = key.decrypt(encrypted, 'utf8');
-console.log('decrypted with node-rsa: ', decrypted);
+const encrypted = key.encrypt(text, 'base64')
+console.log('encrypted with node-rsa: ', encrypted)
+const decrypted = key.decrypt(encrypted, 'utf8')
+console.log('decrypted with node-rsa: ', decrypted)
 
+// Implementacion del algoritmo de cifrado AES.
+console.log("Implementacion del cifrado AES.")
 
 let password = "C1rcu70523#"
 let message = "There is no problem so bad, that you can't make it worse."
@@ -20,7 +26,7 @@ function encrypt(text) {
 
     crypted += cipher.final("hex")
 
-    console.log("Mensaje encriptado aes: ", crypted)
+    console.log("Mensaje encriptado AES: ", crypted)
 
     return crypted
 }
